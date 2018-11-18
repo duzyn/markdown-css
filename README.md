@@ -26,7 +26,7 @@ It support Pandoc Markdown syntax, include:
 
 You can see the example below:
 
-[Pandoc Manual HTML Version](http://www.pengdaiwu.com/markdown-css/Pandoc_MANUAL.html) and [Pandoc Manual Markdown Version](./Pandoc_MANUAL.md?raw=true).
+[Pandoc Manual HTML Version](http://www.pengdaiwu.com/markdown-css/markdown-css-example.html) and [original source](https://github.com/jgm/pandoc/raw/master/MANUAL.txt).
 
 ## Generate example
 
