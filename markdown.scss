@@ -1,0 +1,534 @@
+// Variables
+
+// Font Family
+$body-fonts: "Noto Sans Mono", "Noto Sans Mono CJK SC", "Source Code Pro", "Source Han Sans HW SC", Consolas, "Courier New", monospace !default;
+
+$body-fonts-weight: 400 !default;
+$heading-fonts-weight: 700 !default;
+
+// Font Size
+$base-font-size: 10px !default;
+$body-font-size: 1.6rem !default;
+
+// Line Height
+$base-line-height: 1.5 !default;
+
+$container-width: 64rem !default;
+$padding: 4rem !default;
+
+// Colors
+$font-color: #222 !default;
+$light-grey: #f5f5f5 !default;
+$grey: #e0e0e0 !default;
+$dark-grey: #c9c9c9 !default;
+$link-color: #06c !default;
+
+// Markdown Syntax
+$four-space: 3.2rem;
+$four-space-css3: 4ch;
+$two-space-css3: 2ch;
+$ul-tick: "-";
+$strong-char: "**";
+$em-char: "_";
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  font-family: $body-fonts;
+  font-size: $body-font-size;
+  font-weight: $body-fonts-weight;
+  color: $font-color;
+  line-height: $base-line-height;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: $padding/2 $padding*2;
+  word-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, pre, blockquote {
+  font-size: $body-font-size;
+  margin-top: $body-font-size;
+}
+
+h1, h2, h3, h4, h5, h6, pre, code, blockquote, em, strong, code {
+  font-weight: normal;
+  font-style: normal;
+  font-family: $body-fonts;
+}
+
+h1, h2, h3, h4, h5, h6, pre, code, blockquote, ol, ul, li, p, section, header, footer {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, pre, blockquote {
+  margin-top: $body-font-size;
+  margin-bottom: $body-font-size;
+}
+
+h1 {
+  margin: 0;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  position: relative;
+  margin-bottom: $body-font-size;
+}
+
+h1:before,
+h2:before,
+h3:before,
+h4:before,
+h5:before,
+h6:before {
+  display: inline;
+}
+h1:before {
+  content: "# ";
+}
+h2:before {
+  content: "## ";
+}
+h3:before {
+  content: "### ";
+}
+h4:before {
+  content: "#### ";
+}
+h5:before {
+  content: "##### ";
+}
+h6:before {
+  content: "###### ";
+}
+
+h1 {
+  margin-left: -2ch;
+  padding-left: 2ch;
+  text-indent: -2ch;
+}
+
+h2 {
+  margin-left: -3ch;
+  padding-left: 3ch;
+  text-indent: -3ch;
+}
+
+h3 {
+  margin-left: -4ch;
+  padding-left: 4ch;
+  text-indent: -4ch;
+}
+
+h4 {
+  margin-left: -5ch;
+  padding-left: 5ch;
+  text-indent: -5ch;
+}
+
+h5 {
+  margin-left: -6ch;
+  padding-left: 6ch;
+  text-indent: -6ch;
+}
+
+h6 {
+  margin-left: -7ch;
+  padding-left: 7ch;
+  text-indent: -7ch;
+}
+
+
+// Lists
+ul > li {
+  list-style-type: none;
+  padding-left: $four-space;
+  padding-left: $four-space-css3;
+  text-indent: -$four-space;
+  text-indent: -$four-space-css3;
+  &:before {
+    content: "-\00a0\00a0\00a0"
+  }
+
+  p {
+    text-indent: 0;
+    display: inline;
+  }
+}
+
+ol ol {
+  list-style-type: lower-alpha;
+}
+
+
+dd {
+  margin-left: 0;
+  margin-bottom: $body-font-size;
+  padding-left: $four-space;
+  padding-left: $four-space-css3;
+  text-indent: -$four-space;
+  text-indent: -$four-space-css3;
+  &:before {
+    content: ":\00a0\00a0\00a0";
+  }
+  ol, ul {
+    margin-bottom: $body-font-size;
+  }
+  ol {
+    ul {
+      margin-left: 0;
+    }
+  }
+  p, ol, ul {
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+  p {
+    text-indent: 0;
+  }
+  & > p:first-child {
+    display: inline;
+    padding-left: 0;
+  }
+
+
+  ul {
+    &:first-child {
+      margin-top: 0;
+    }
+    margin-left: 0;
+    li {
+      margin-left: $four-space;
+      margin-left: $four-space-css3;
+      p, ul, ol {
+        margin-left: -$four-space;
+        margin-left: -$four-space-css3;
+        &:last-child {
+          margin-bottom: $base-font-size;
+        }
+      }
+    }
+  }
+
+  ol {
+    &:first-child {
+      margin-top: 0;
+    }
+    margin-left: 3ch;
+    li {
+      margin-left: 0;
+      text-indent: 0;
+      ul {
+        li {
+          text-indent: -$four-space;
+          text-indent: -$four-space-css3;
+        }
+      }
+      p, ul {
+        text-indent: 0;
+        &:last-child {
+          margin-bottom: $base-font-size;
+        }
+      }
+    }
+  }
+}
+
+pre {
+  margin-left: 0;
+  padding-left: $four-space-css3;
+}
+blockquote {
+  position: relative;
+  padding-left: $four-space/2;
+  padding-left: $two-space-css3;
+  overflow: hidden;
+
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:after {
+    // 100 lines max
+    // the \A becomes a newline character and `white-space: pre`
+    // makes it act like a <br>
+    content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
+    white-space: pre;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: $body-font-size;
+    line-height: $base-line-height;
+  }
+}
+
+strong {
+  font-weight: bold;
+    &:before, &:after {
+    content: $strong-char;
+    display: inline;
+  }
+}
+
+em {
+  font-style: italic;
+  &:before, &:after {
+    content: $em-char;
+    display: inline;
+  }
+}
+
+// Links
+a {
+  &,
+  &:hover,
+  &:visited {
+    color: $link-color;
+    text-decoration: none;
+  }
+
+  &:before {
+    content: "[";
+    display: inline;
+    color: $font-color;
+  }
+  &:after {
+    content: "](" attr(href) ")";
+    display: inline;
+    color: $font-color;
+  }
+
+}
+
+// Footnotes Ref
+a.footnoteRef,
+a[id^="fnref"] {
+  &:before {
+    content: "[^";
+  }
+  &:after {
+    content: "]";
+  }
+  sup {
+    font-style: normal;
+    font-size: inherit;
+    position: inherit;
+  }
+}
+
+// Footnotes
+.footnotes {
+  ol {
+    // Auto-increments the numbering for ordered lists.
+    counter-reset:ol;
+
+    li[id^="fn"] {
+      list-style-type: none;
+      padding-left: 8ch;
+      text-indent: -8ch;
+      p {
+        display: inline;
+        text-indent: 0
+      }
+
+      & > p:first-child {
+        display: inline;
+        padding-left: 0;
+      }
+
+      &:before {
+        content: "[^" counter(ol) "]:\00a0\00a0\00a0";
+        counter-increment: ol;
+      }
+    }
+  }
+}
+
+a[href^="#fnref"] {
+  &:before {
+    content: "\00a0";
+  }
+  &:after {
+    content: "\00a0";
+  }
+}
+
+// Code
+code { font-weight: inherit; }
+
+code:before,
+code:after {
+  content: "`";
+  display: inline;
+}
+
+pre code {
+  display: block;
+  text-indent: 0;
+  &:before,
+  &:after {
+    content: none;
+  }
+}
+
+hr {
+  position: relative;
+  height: $body-font-size;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  border: 0;
+  margin-bottom: $body-font-size;
+
+  &:after {
+    // 72 characters wide max
+    // older ie versions do not show the content
+    content: "------------------------------------------------------------------------";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: $base-font-size;
+    line-height: $body-font-size;
+    width: 100%;
+    word-wrap: break-word;
+  }
+}
+
+figure {
+  margin: $body-font-size 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  // only opera support before and after with img :(
+  // &:before {
+  //   content: "![" attr(alt);
+  //   display: inline-block;
+  // }
+  // &:after {
+  //   content: "](" attr(scr) ")";
+  //   display: inline-block;
+  // }
+}
+
+dd figure {
+  padding-left: $four-space;
+  padding-left: $four-space-css3;
+}
+
+// Tables
+table {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  padding: $body-font-size*2 0;
+  margin: 0;
+  overflow: hidden;
+
+  &:before {
+    // 72 characters wide max
+    content: "------------------------------------------------------------------------";
+    position: absolute;
+    top: $body-font-size;
+    left: 0;
+  }
+  &:after {
+    // 72 characters wide max
+    content: "------------------------------------------------------------------------";
+    position: absolute;
+    bottom: $body-font-size;
+    left: 0;
+  }
+}
+
+thead {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  padding: 0 0 $body-font-size 0;
+  margin: 0;
+  overflow: hidden;
+  &:after {
+    // 73 characters wide max
+    content: "------------------------------------------------------------------------";
+    position: absolute;
+    // bottom: $body-font-size;
+    left: 0;
+  }
+}
+
+tr {
+  text-align: left;
+}
+th, td {
+  padding: 0 1ch;
+}
+
+// Pandoc
+header {
+  position: relative;
+  display: inline-block;
+  padding: 1.6rem * 2 0;
+  margin: 0;
+  overflow: hidden;
+  p:last-child {
+    margin-bottom: 0;
+  }
+  &:before {
+    content: "---";
+    position: absolute;
+    top: 1rem;
+    left: 0;
+  }
+  &:after {
+    content: "---";
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+  }
+}
+
+h1.title,
+p.author,
+p.date {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1.title {
+  font-weight: $body-fonts-weight;
+  margin-left: 0;
+  padding-left: 9ch ;
+  text-indent: -9ch ;
+  &:before {
+    content: "title\00a0\00a0:\00a0";
+  }
+}
+
+p.author {
+  padding-left: 9ch ;
+  text-indent: -9ch ;
+  &:before {
+    content: "author\00a0:\00a0";
+  }
+}
+
+p.date {
+  padding-left: 9ch ;
+  text-indent: -9ch ;
+  &:before {
+    content: "date\00a0\00a0\00a0:\00a0";
+  }
+}
