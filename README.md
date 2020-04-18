@@ -42,13 +42,21 @@ Generate CSS file:
 
 Generate example based on Pandoc Manual:
 
-    pandoc https://cdn.jsdelivr.net/gh/jgm/pandoc/MANUAL.txt -o markdown-css-example.html -f markdown -t html5 -s -c ./markdown.css --no-highlight
+    pandoc https://cdn.jsdelivr.net/gh/jgm/pandoc/MANUAL.txt \
+        -o markdown-css-example.html \
+        -f markdown -t html5 -s \
+        -c ./markdown.css --no-highlight
 
 Generate web page screenshot
 
-    capture-website markdown-css-example.html --output=markdown-css-example.png --type=png --overwrite --scale-factor=1
+    capture-website markdown-css-example.html \
+        --output=markdown-css-example.png \
+        --type=png --overwrite --scale-factor=1
 
-    capture-website markdown-css-example.html --output=markdown-css-example-dark-mode.png --type=png --overwrite --scale-factor=1 --dark-mode
+    capture-website markdown-css-example.html \
+        --output=markdown-css-example-dark-mode.png \
+        --type=png --overwrite --scale-factor=1 \
+        --dark-mode
 
 ## Author
 
