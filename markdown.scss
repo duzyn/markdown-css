@@ -47,7 +47,7 @@ body {
   line-height: $base-line-height;
   max-width: $container-width;
   margin: 0 auto;
-  padding: $padding/2 $padding*2;
+  padding: calc($padding/2) calc($padding*2);
   word-wrap: break-word;
 }
 
@@ -250,7 +250,7 @@ pre {
 }
 blockquote {
   position: relative;
-  padding-left: $four-space/2;
+  padding-left: calc($four-space/2);
   padding-left: $two-space-css3;
   overflow: hidden;
 
