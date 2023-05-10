@@ -30,6 +30,8 @@ It support Pandoc Markdown syntax, include:
 - Horizontal rules
 - Footnotes
 
-You can see the example below:
+## Demo
+
+You can see the demo below:
 
 [Pandoc manual HTML version](./markdown-css-example.html) and [original source](https://cdn.jsdelivr.net/gh/jgm/pandoc/MANUAL.txt).
